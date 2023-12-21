@@ -40,3 +40,93 @@ int *paddedCopy(const int *arr, int oldSize, int newSize) {
 
     return newArr;
 }
+// 
+void reverse(int *arr, int size) {
+    for (int i = 0, j = size - 1; i < j; ++i, --j) {
+        // Swap elements at positions i and j
+        int temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+    }
+}
+// Function to create a new array with elements in reverse order
+int *reverseCopy(const int *arr, int size) {
+    int *newArr = (int *)malloc(size * sizeof(int));
+    
+    for (int i = 0, j = size - 1; i < size; ++i, --j) {
+        newArr[i] = arr[j];
+    }
+
+    return newArr;
+}
+// Function to create a new array with elements in reverse order
+int *reverseCopy(const int *arr, int size) {
+    int *newArr = (int *)malloc(size * sizeof(int));
+    
+    for (int i = 0, j = size - 1; i < size; ++i, --j) {
+        newArr[i] = arr[j];
+    }
+
+    return newArr;
+}
+// 
+void reverse(int *arr, int size) {
+    for (int i = 0, j = size - 1; i < j; ++i, --j) {
+        // Swap elements at positions i and j
+        int temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+    }
+}
+// Function to create a new array with elements in reverse order
+int *reverseCopy(const int *arr, int size) {
+    int *newArr = (int *)malloc(size * sizeof(int));
+    
+    for (int i = 0, j = size - 1; i < size; ++i, --j) {
+        newArr[i] = arr[j];
+    }
+
+    return newArr;
+}
+
+int main() {
+    int arr[] = {10, 15, 5, 25, 0};
+    int size = sizeof(arr) / sizeof(arr[0]);
+
+    // contains
+    printf("Contains 5: %d\n", contains(arr, size, 5));
+
+    // containsWithin
+    printf("Contains 15 within indices 1 and 3: %d\n", containsWithin(arr, size, 15, 1, 3));
+
+    // paddedCopy
+    int newSize = 8;
+    int *paddedArr = paddedCopy(arr, size, newSize);
+    printf("Padded Copy: ");
+    for (int i = 0; i < newSize; ++i) {
+        printf("%d ", paddedArr[i]);
+    }
+
+    printf("\n");
+    free(paddedArr);
+
+    // reverse
+    reverse(arr, size);
+    printf("Reversed Array: ");
+    for (int i = 0; i < size; ++i) {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+     // reverseCopy
+    int *reverseArr = reverseCopy(arr, size);
+    printf("Reverse Copy: ");
+    for (int i = 0; i < size; ++i) {
+        printf("%d ", reverseArr[i]);
+    }
+    printf("\n");
+    free(reverseArr);
+
+    return 0;
+}
+
+
